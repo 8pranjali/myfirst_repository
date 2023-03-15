@@ -18,8 +18,8 @@ phases:
   build:
     commands:
       - docker build -t test .
-      - docker tag test:latest 376045651106.dkr.ecr.us-west-1.amazonaws.com/test:latest
+      - docker tag ecrpipeline:latest 376045651106.dkr.ecr.us-west-1.amazonaws.com/ecrpipeline:latest
   post_build:
     commands:
       - docker images
-      - docker push 376045651106.dkr.ecr.us-west-1.amazonaws.com/test:latest
+      - docker push 376045651106.dkr.ecr.us-west-1.amazonaws.com/ecrpipeline:latest
