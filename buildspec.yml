@@ -23,3 +23,7 @@ phases:
     commands:
       - docker images
       - docker push 376045651106.dkr.ecr.us-west-1.amazonaws.com/ecrpipeline:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"app","imageUri":"376045651106.dkr.ecr.us-west-1.amazonaws.com/ecrpipeline:latest"}]' > imagedefinitions.json
+  artifacts:
+    files: imagedefinitions.json
